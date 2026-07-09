@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill -f \"node scripts/generatePuzzles.js\")",
+      "Bash(node -e \"\nconst fs = require(''fs'');\n\n// Read the curated list from puzzle-words.txt\nconst curatedWords = fs.readFileSync(''puzzle-words.txt'', ''utf-8'')\n  .trim()\n  .split(''\\n'')\n  .map(w => w.trim())\n  .filter(w => w.length > 0);\n\nconsole.log(''Read'', curatedWords.length, ''words from puzzle-words.txt'');\n\n// Save as the main word list (lowercase to match format)\nconst wordList = curatedWords.map(w => w.toLowerCase());\nfs.writeFileSync(''public/words.json'', JSON.stringify(wordList, null, 2));\n\nconsole.log(''Saved'', wordList.length, ''words to public/words.json'');\nconsole.log(''First 10:'', wordList.slice(0, 10).join('', ''));\n\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

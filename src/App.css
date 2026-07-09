@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #121213;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr 320px;
+  gap: 40px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.game-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instructions {
+  background-color: #1a1a1b;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.guess-history-panel {
+  background-color: #1a1a1b;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.instructions h2 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.instructions h3 {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #d7dadc;
+}
+
+.instruction-section {
+  margin-bottom: 20px;
+}
+
+.instruction-section p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #d7dadc;
+}
+
+.instruction-section ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #d7dadc;
+}
+
+.instruction-section li {
+  margin-bottom: 4px;
+}
+
+.color-example {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.color-box {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.color-correct {
+  background-color: #538d4e;
+}
+
+.color-present-row {
+  background-color: #b59f3b;
+}
+
+.color-present-col {
+  background-color: #3a6bb5;
+}
+
+.color-present-both {
+  background-color: #8b4f9e;
+}
+
+.color-absent {
+  background-color: #3a3a3c;
+}
+
+@media (max-width: 900px) {
+  .game-layout {
+    flex-direction: column;
+  }
+
+  .instructions {
+    width: 100%;
+    order: -1;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.game-info {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #d7dadc;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.grid-row {
+  display: flex;
+  gap: 5px;
+}
+
+.cell {
+  width: 62px;
+  height: 62px;
+  border: 2px solid #3a3a3c;
+  background-color: #121213;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  caret-color: #ffffff;
+}
+
+.cell:focus {
+  outline: none;
+  border-color: #565758;
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+}
+
+.cell-correct {
+  background-color: #538d4e;
+  border-color: #538d4e;
+  color: #ffffff;
+}
+
+.cell-present-row {
+  background-color: #b59f3b;
+  border-color: #b59f3b;
+  color: #ffffff;
+}
+
+.cell-present-col {
+  background-color: #3a6bb5;
+  border-color: #3a6bb5;
+  color: #ffffff;
+}
+
+.cell-present-both {
+  background-color: #8b4f9e;
+  border-color: #8b4f9e;
+  color: #ffffff;
+}
+
+.cell-absent {
+  background-color: #3a3a3c;
+  border-color: #3a3a3c;
+  color: #ffffff;
+}
+
+.button {
+  background-color: #538d4e;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #6aaa64;
+}
+
+.button:disabled {
+  background-color: #3a3a3c;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.error {
+  color: #f87171;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.game-over {
+  text-align: center;
+}
+
+.game-over h2 {
+  font-size: 28px;
+  margin: 20px 0;
+}
+
+.solution {
+  margin-top: 30px;
+}
+
+.solution h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.current-grid {
+  margin-bottom: 10px;
+}
