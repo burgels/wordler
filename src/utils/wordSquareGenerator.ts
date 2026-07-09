@@ -40,7 +40,7 @@ function buildCandidateIndex(wordList: string[]): Map<string, string[]> {
  */
 function getCandidates(
   constraints: (string | null)[],
-  wordList: string[],
+  _wordList: string[],
   index: Map<string, string[]>
 ): string[] {
   // Build prefix from known constraints

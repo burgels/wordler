@@ -5,7 +5,6 @@ import { Instructions } from './Instructions';
 import { getRandomPuzzle } from '../utils/puzzleLoader';
 import { loadWordList } from '../utils/wordList';
 import { initializeGame, submitGuess, updateCell, GameState } from '../utils/gameState';
-import type { WordSquare } from '../utils/types';
 
 export function Game() {
   const [gameState, setGameState] = useState<GameState | null>(null);
